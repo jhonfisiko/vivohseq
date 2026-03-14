@@ -4,10 +4,28 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-col bg-hseq-blue scroll-smooth">
-      {/* SECCIÓN HERO */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#002244] to-hseq-blue">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-hseq-gold/10 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-600/20 rounded-full blur-[100px]"></div>
+      
+      {/* SECCIÓN HERO CON VIDEO DE FONDO Y MAYOR TRANSPARENCIA */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        {/* CONTENEDOR DE VIDEO */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/video.mp4" type="video/mp4" />
+            Tu navegador no soporta videos.
+          </video>
+          
+          {/* OVERLAY MODIFICADO: Mucho más transparente (opacity-65) */}
+          <div className="absolute inset-0 bg-[#001a33]/65 z-1"></div>
+        </div>
+
+        {/* Luces de ambiente decorativas */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-hseq-gold/10 rounded-full blur-[120px] z-1"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -18,7 +36,7 @@ export default function Home() {
               </div>
               <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6">
                 Liderazgo en <br />
-                <span className="text-hseq-gold drop-shadow-sm">Sistemas HSEQ</span>
+                <span className="text-hseq-gold drop-shadow-lg">Sistemas HSEQ</span>
               </h1>
               <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-lg leading-relaxed border-l-4 border-hseq-gold pl-6">
                 Transformamos el cumplimiento normativo en una ventaja competitiva para su negocio en Colombia.
@@ -30,9 +48,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CAJA DE SERVICIOS DERECHA */}
+            {/* CAJA DE SERVICIOS DERECHA MODIFICADA: Ahora más translúcida */}
             <div className="relative">
-              <div className="bg-[#001a33]/90 backdrop-blur-xl border-2 border-hseq-gold p-10 rounded-3xl shadow-[0_0_40px_rgba(255,215,0,0.15)] relative overflow-hidden">
+              {/* Fondo cambiado a opacity-50 y backdrop-blur-lg */}
+              <div className="bg-[#001a33]/50 backdrop-blur-lg border-2 border-hseq-gold p-10 rounded-3xl shadow-[0_0_40px_rgba(255,215,0,0.15)] relative overflow-hidden">
                 <h3 className="text-hseq-gold text-2xl font-black mb-8 flex items-center gap-3">
                   <ShieldCheck size={32} /> PORTAFOLIO ELITE
                 </h3>
@@ -60,8 +79,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEDES */}
-      <section className="bg-hseq-gold py-10">
+      {/* SEDES (Mantenemos el diseño original, se superpone al Hero) */}
+      <section className="bg-hseq-gold py-10 relative z-10">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-around items-center gap-8 text-hseq-blue font-black tracking-widest text-sm">
           <span>BOGOTÁ</span><span>|</span><span>ARMENIA</span><span>|</span><span>IBAGUÉ</span><span>|</span><span>CALI</span>
         </div>
@@ -97,8 +116,14 @@ export default function Home() {
               VIVO HSEQ ofrece soluciones reales y personalizadas para que usted se concentre en hacer crecer su negocio mientras nosotros cuidamos su cumplimiento legal.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10"><p className="text-4xl font-black text-hseq-gold">100%</p><p className="text-xs uppercase font-bold text-blue-200">Legal</p></div>
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10"><p className="text-4xl font-black text-hseq-gold">+50</p><p className="text-xs uppercase font-bold text-blue-200">Clientes</p></div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <p className="text-4xl font-black text-hseq-gold">100%</p>
+                <p className="text-xs uppercase font-bold text-blue-200">Legal</p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <p className="text-4xl font-black text-hseq-gold">+50</p>
+                <p className="text-xs uppercase font-bold text-blue-200">Clientes</p>
+              </div>
             </div>
           </div>
           <div className="flex-1 w-full relative group">
