@@ -21,9 +21,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/vivohseq" className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-hseq-gold hover:text-[#000d1a] hover:border-hseq-gold transition-all duration-300 shadow-sm">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-hseq-gold hover:text-[#000d1a] hover:border-hseq-gold transition-all duration-300 shadow-sm">
-                <Linkedin size={20} />
-              </a>
+              
               <a href="https://www.instagram.com/vivohseq/" className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-hseq-gold hover:text-[#000d1a] hover:border-hseq-gold transition-all duration-300 shadow-sm">
                 <Instagram size={20} />
               </a>
