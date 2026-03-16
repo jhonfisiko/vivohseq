@@ -42,7 +42,7 @@ const Footer = () => {
                 <div className="p-2 rounded-lg bg-hseq-gold/10 text-hseq-gold">
                   <Mail size={20} />
                 </div>
-                <span className="text-blue-100 font-medium">profesionalssthseq@gmail.com</span>
+                <span className="text-blue-100 font-medium">info@vivohseq.com</span>
               </li>
               <li className="flex items-start gap-4">
                 <div className="p-2 rounded-lg bg-hseq-gold/10 text-hseq-gold">

@@ -10,8 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         hseq: {
-          blue: '#003366', // El azul corporativo que vimos
-          gold: '#C5A059', // El dorado de certificación
+       blue: '#001a33', // Azul Medianoche
+          gold: '#FFD700', // Oro Brillante (Vibrante)
+          accent: '#C5A059', // Dorado Bronce para detalles sutiles
         }
       },
     },
