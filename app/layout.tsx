@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { Analytics } from "@vercel/analytics/react"; // 1. Importación
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script"; // 1. Importamos el componente de Script
 import "./globals.css";
 
 export const metadata = {
@@ -16,6 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        {/* 2. Script de Umami con tu ID */}
+        <Script 
+          src="https://cloud.umami.is/script.js" 
+          data-website-id="34564a8c-5543-4fbf-9215-88ddb57b98ea"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#001a33] selection:bg-hseq-gold selection:text-white">
         
         {/* PUNTO DE ANCLAJE CRÍTICO */}
@@ -30,7 +39,7 @@ export default function RootLayout({
         <WhatsAppButton />
         <Footer />
 
-        {/* 2. Componente de Analíticas */}
+        {/* Analíticas de Vercel */}
         <Analytics /> 
       </body>
     </html>
