@@ -86,7 +86,8 @@ export default function Home() {
                     { t: "ISO 9001 / 14001 / 45001", d: "Calidad, Ambiental y Seguridad" },
                     { t: "ISO 27001 / 18788", d: "Información y Seguridad Privada" },
                     { t: "SARLAFT / BASC / RUC", d: "Riesgos, Comercio y Contratistas" },
-                    { t: "Circular 027 de 2026", d: "Reporte Obligatorio MinTrabajo" }
+                    { t: "Circular 027 de 2026", d: "Reporte Obligatorio MinTrabajo" },
+                    { t: "Responsabilidad Social", d: "Estrategias de Impacto Empresarial (RSE)" }
                   ].map((item, index) => (
                     <li key={index} className="group flex items-start gap-4">
                       <div className="mt-1 bg-hseq-gold rounded-lg p-1.5 group-hover:rotate-12 transition-transform">
