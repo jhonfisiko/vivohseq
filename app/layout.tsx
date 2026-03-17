@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/react"; // 1. Importación
 import "./globals.css";
 
 export const metadata = {
@@ -17,18 +18,20 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <body className="antialiased min-h-screen flex flex-col bg-[#001a33] selection:bg-hseq-gold selection:text-white">
         
-        {/* PUNTO DE ANCLAJE CRÍTICO: Debe estar aquí para que el scroll sea total */}
+        {/* PUNTO DE ANCLAJE CRÍTICO */}
         <div id="top" className="absolute top-0 left-0" />
 
         <Navbar />
         
-        {/* El pt-20 está perfecto para compensar el Navbar fijo */}
         <main className="flex-grow pt-20">
           {children}
         </main>
         
         <WhatsAppButton />
         <Footer />
+
+        {/* 2. Componente de Analíticas */}
+        <Analytics /> 
       </body>
     </html>
   );
